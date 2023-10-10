@@ -10,7 +10,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <Fragment>
       <Head>
         <title>larmong blog</title>
-        <link rel="icon" href="public/images/larmong.svg" />
+        <link rel="icon" href="/images/larmong.svg" />
       </Head>
       <Global styles={GlobalStyle} />
       <Layout>

@@ -1,16 +1,8 @@
 import { css } from "@emotion/react";
-import { Common } from "./emotion";
-import styled from "@emotion/styled";
 
 export const GlobalStyle = css`
-  @import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Rubik+Mono+One&display=swap");
-  @font-face {
-    font-family: "Chosunilbo_myungjo";
-    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff")
-      format("woff");
-    font-weight: normal;
-    font-style: normal;
-  }
+  @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap");
+
   * {
     margin: 0;
     box-sizing: border-box;
@@ -24,10 +16,10 @@ export const GlobalStyle = css`
     user-select: none;
   }
   body {
-    font-family: ${Common.font.default};
+    font-family: "Noto Sans KR", sans-serif;
     font-weight: 400;
     font-size: 16px;
-    color: ${Common.color.white};
+    color: #fff;
     background-size: contain;
   }
   em {
