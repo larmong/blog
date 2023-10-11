@@ -4,6 +4,7 @@ import { Layout, Menu, MenuProps } from "antd";
 import { useRouter } from "next/router";
 import { useRecoilState } from "recoil";
 import { Logo, LogoWrapper } from "./SideMenu.style";
+import { useEffect, useState } from "react";
 
 export default function SideMenu() {
   const router = useRouter();
@@ -12,10 +13,19 @@ export default function SideMenu() {
   const { Sider } = Layout;
 
   const [collapsed, setCollapsed] = useRecoilState(sideMenuState);
+  const [current, setCurrent] = useState("");
 
   const onClickMoveToMenus: MenuProps["onClick"] = (e): void => {
     void router.push(`${e.key}`);
   };
+
+  useEffect(() => {
+    if (router.route === "/") {
+      setCurrent("");
+    } else {
+      setCurrent(router.route);
+    }
+  }, [router]);
 
   return (
     <Sider
@@ -30,14 +40,20 @@ export default function SideMenu() {
         top: 0,
       }}
     >
-      <LogoWrapper collapsed={collapsed}>
-        <Logo
-          onClick={(): void => {
-            void router.push("/");
-          }}
-        ></Logo>
+      <LogoWrapper
+        collapsed={collapsed}
+        onClick={() => {
+          void router.push("/");
+        }}
+      >
+        <Logo></Logo>
       </LogoWrapper>
-      <Menu onClick={onClickMoveToMenus} mode="inline" items={menus} />
+      <Menu
+        onClick={onClickMoveToMenus}
+        selectedKeys={[current]}
+        mode="inline"
+        items={menus}
+      />
     </Sider>
   );
 }

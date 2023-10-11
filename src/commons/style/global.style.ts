@@ -20,7 +20,7 @@ export const GlobalStyle = css`
     font-weight: 400;
     font-size: 16px;
     color: #fff;
-    background: #333;
+    background: #444;
   }
   em {
     font-style: normal;

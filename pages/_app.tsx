@@ -12,7 +12,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <RecoilRoot>
         <Head>
           <title>larmong blog</title>
-          <link rel="icon" href="/images/larmong.svg" />
+          <link rel="icon" href="/images/favicon.svg" />
         </Head>
         <Global styles={GlobalStyle} />
         <Layout>

@@ -10,7 +10,7 @@ export const LogoWrapper = styled.div`
 export const Logo = styled.h1`
   width: 100%;
   height: 100%;
-  background-image: url("images/larmong.svg");
+  background-image: url("images/logo.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
