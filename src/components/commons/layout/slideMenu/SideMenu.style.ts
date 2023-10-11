@@ -1,4 +1,4 @@
-import styled from "@emotion/styled/dist/emotion-styled.cjs";
+import styled from "@emotion/styled";
 import { ICollapsedType } from "../Layout.types";
 
 export const LogoWrapper = styled.div`

@@ -1,13 +1,14 @@
 import { useRecoilState } from "recoil";
-import { Contents, Page, Wrapper } from "./Layout.style";
-import { ConfigProvider, Layout, MenuProps } from "antd";
-import { FooterTheme, Theme } from "./theme";
 import { sideMenuState } from "../../../commons/store/store";
+import { Contents, Page, Wrapper } from "./Layout.style";
+import { ConfigProvider, Layout } from "antd";
+import { Theme } from "./theme";
 import { ILayoutProps } from "./Layout.types";
 import SideMenu from "./slideMenu/SideMenu.container";
+import Footer from "./footer/Footer.container";
 
 export default function LayoutPage(props: ILayoutProps): JSX.Element {
-  const { Header, Footer } = Layout;
+  const { Header } = Layout;
   const [collapsed, setCollapsed] = useRecoilState(sideMenuState);
 
   return (
@@ -26,9 +27,7 @@ export default function LayoutPage(props: ILayoutProps): JSX.Element {
               <Header style={{ padding: 0, background: "transparent" }} />
               <Page>{props.children}</Page>
             </Contents>
-            <Footer style={FooterTheme}>
-              Copyrightⓒ 2023 larmong All rights reserved.
-            </Footer>
+            <Footer />
           </Layout>
         </Layout>
       </ConfigProvider>
