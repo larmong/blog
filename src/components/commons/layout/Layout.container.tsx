@@ -1,15 +1,15 @@
-import { useRecoilState } from "recoil";
-import { sideMenuState } from "../../../commons/store/store";
-import { Contents, Page, Wrapper } from "./Layout.style";
-import { ConfigProvider, Layout } from "antd";
-import { Theme } from "./theme";
 import { ILayoutProps } from "./Layout.types";
-import SideMenu from "./slideMenu/SideMenu.container";
+import { Theme } from "./theme";
+import { sideMenuState } from "../../../commons/store/store";
+import { ConfigProvider, Layout } from "antd";
+import { Contents, Page, Wrapper } from "./Layout.style";
+import { useRecoilState } from "recoil";
+import Header from "./header/Header.container";
 import Footer from "./footer/Footer.container";
+import SideMenu from "./slideMenu/SideMenu.container";
 
 export default function LayoutPage(props: ILayoutProps): JSX.Element {
-  const { Header } = Layout;
-  const [collapsed, setCollapsed] = useRecoilState(sideMenuState);
+  const [collapsed] = useRecoilState<boolean>(sideMenuState);
 
   return (
     <Wrapper>
@@ -24,7 +24,7 @@ export default function LayoutPage(props: ILayoutProps): JSX.Element {
             }}
           >
             <Contents>
-              <Header style={{ padding: 0, background: "transparent" }} />
+              <Header />
               <Page>{props.children}</Page>
             </Contents>
             <Footer />
