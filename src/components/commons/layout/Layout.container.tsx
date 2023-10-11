@@ -14,7 +14,7 @@ export default function LayoutPage(props: ILayoutProps): JSX.Element {
   return (
     <Wrapper>
       <ConfigProvider theme={Theme}>
-        <Layout>
+        <Layout style={{ background: "#444" }}>
           <SideMenu />
           <Layout
             style={{
