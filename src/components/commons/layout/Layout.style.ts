@@ -24,6 +24,7 @@ export const Logo = styled.h1`
 
 export const Contents = styled.div`
   min-height: calc(100vh - 50px);
+  background: #444;
 `;
 export const Page = styled.div`
   padding: 30px;

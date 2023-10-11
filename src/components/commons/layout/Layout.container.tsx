@@ -1,17 +1,17 @@
 import { useRouter } from "next/router";
 import { useRecoilState } from "recoil";
-import { ILayoutProps } from "./Layout.types";
-import { ConfigProvider, Layout, Menu, MenuProps } from "antd";
 import { Contents, Logo, LogoWrapper, Page, Wrapper } from "./Layout.style";
+import { ConfigProvider, Layout, Menu, MenuProps } from "antd";
+import { FooterTheme, Theme } from "./theme";
 import { sideMenuState } from "../../../commons/store/store";
 import { Menus } from "./menus";
-import { Theme } from "./theme";
+import { ILayoutProps } from "./Layout.types";
 
 export default function LayoutPage(props: ILayoutProps): JSX.Element {
   const router = useRouter();
   const menus: any = Menus;
 
-  const { Sider, Content, Footer } = Layout;
+  const { Header, Sider, Content, Footer } = Layout;
   const [collapsed, setCollapsed] = useRecoilState(sideMenuState);
 
   const onClickMoveToMenus: MenuProps["onClick"] = (e): void => {
@@ -47,24 +47,14 @@ export default function LayoutPage(props: ILayoutProps): JSX.Element {
             style={{
               transition: "all 0.2s ease-in",
               paddingLeft: collapsed ? 80 : 280,
-              background: "#444",
+              background: "transparent",
             }}
           >
             <Contents>
+              <Header style={{ padding: 0, background: "transparent" }} />
               <Page>{props.children}</Page>
             </Contents>
-            <Footer
-              style={{
-                height: "50px",
-                padding: "0",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: "0.8em",
-                color: "#fff",
-                background: "#444",
-              }}
-            >
+            <Footer style={FooterTheme}>
               Copyrightⓒ 2023 larmong All rights reserved.
             </Footer>
           </Layout>

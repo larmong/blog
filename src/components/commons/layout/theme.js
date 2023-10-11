@@ -17,3 +17,14 @@ export const Theme = {
     },
   },
 };
+
+export const FooterTheme = {
+  height: "50px",
+  padding: "0",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  fontSize: "0.8em",
+  color: "#fff",
+  background: "#444",
+};
