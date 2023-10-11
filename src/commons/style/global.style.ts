@@ -20,7 +20,7 @@ export const GlobalStyle = css`
     font-weight: 400;
     font-size: 16px;
     color: #fff;
-    background-size: contain;
+    background: #333;
   }
   em {
     font-style: normal;
@@ -55,5 +55,19 @@ export const GlobalStyle = css`
     font-size: 15px;
     line-height: 23px;
     color: #bdbdbd;
+  }
+
+  // 사이드메뉴 아이콘
+  .ant-layout-sider-collapsed {
+    .ant-menu-item {
+      display: flex;
+      align-items: center;
+      padding: 0 0 0 10px;
+      .ant-menu-item-icon {
+        margin-left: 6px;
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
 `;

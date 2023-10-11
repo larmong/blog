@@ -1,22 +1,6 @@
-import SideMenu from "../../components/commons/layout/sideMenu/SideMenu.container";
-import {
-  Container,
-  Contents,
-  Page,
-} from "../../components/commons/layout/layout.style";
-import Footer from "../../components/commons/layout/footer/Footer.container";
+import LayoutPage from "../../components/commons/layout/Layout.container";
+import { ILayoutProps } from "../../components/commons/layout/Layout.types";
 
-interface ILayoutProps {
-  children: JSX.Element;
-}
 export default function Layout(props: ILayoutProps): JSX.Element {
-  return (
-    <Container>
-      <SideMenu />
-      <Contents>
-        <Page>{props.children}</Page>
-        <Footer />
-      </Contents>
-    </Container>
-  );
+  return <LayoutPage children={props.children} />;
 }

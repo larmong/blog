@@ -1,18 +1,16 @@
 import styled from "@emotion/styled";
+import { ICollapsedType } from "./Layout.types";
 
 export const Wrapper = styled.div`
-  background: #333;
-  width: 280px;
+  width: 100vw;
   height: 100vh;
-  > ul {
-    padding: 20px 0;
-  }
 `;
 
 export const LogoWrapper = styled.div`
   width: 100%;
   height: 120px;
-  padding: 50px 30px;
+  padding: ${(props: ICollapsedType) =>
+    props.collapsed ? "20px" : "50px 30px"};
 `;
 export const Logo = styled.h1`
   width: 100%;
@@ -22,4 +20,11 @@ export const Logo = styled.h1`
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
+`;
+
+export const Contents = styled.div`
+  min-height: calc(100vh - 50px);
+`;
+export const Page = styled.div`
+  padding: 30px;
 `;
